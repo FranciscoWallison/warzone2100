@@ -1,0 +1,52 @@
+# Mantem o branch master deste fork (FranciscoWallison/warzone2100) sincronizado
+# com o oficial (Warzone2100/warzone2100), automaticamente.
+#
+# POR QUE rebase e nao "gh repo sync":
+#   O arquivo deste workflow vive no master, entao o master fica sempre 1 commit
+#   "a frente" do oficial. O "gh repo sync" so sincroniza por fast-forward; quando
+#   o oficial ganha commits novos, os dois divergem e o fast-forward falha (e o
+#   --force apagaria este proprio arquivo). Entao aqui a gente RECOLOCA (rebase) o
+#   commit deste workflow em cima do oficial atual e da push. O master fica sempre
+#   = oficial atual + 1 commit (este workflow). Limpo, atualizado, sem se autodestruir.
+#
+# Onde colocar: .github/workflows/upstream-sync.yml no SEU FORK (branch master).
+# Habilite as Actions no fork (aba Actions). Veja o README.md nesta pasta.
+# Faca suas modificacoes (graficos, traducao) num branch separado, rebaseando em
+# upstream/master (NAO no master do fork, que e force-pushed por este job).
+
+name: Upstream Sync
+
+on:
+  schedule:
+    - cron: '0 6 * * *'      # todo dia as 06:00 UTC
+  workflow_dispatch: {}        # permite rodar manualmente (aba Actions -> Run workflow)
+
+permissions:
+  contents: write
+
+# evita duas sincronizacoes simultaneas
+concurrency:
+  group: upstream-sync
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout do master do fork (historico completo p/ achar a base do rebase)
+        uses: actions/checkout@v4
+        with:
+          ref: master
+          fetch-depth: 0
+
+      - name: Rebase do commit deste workflow sobre o upstream + push
+        run: |
+          set -euo pipefail
+          git config user.name  "Francisco Wallison"
+          git config user.email "franciscowallison@gmail.com"
+          git remote add upstream https://github.com/Warzone2100/warzone2100.git
+          git fetch --no-tags upstream master
+          # reaplica os commits locais (este workflow) em cima do oficial atual
+          git rebase upstream/master
+          # master = oficial atual + commit do workflow; atualiza o fork
+          git push --force-with-lease origin master
