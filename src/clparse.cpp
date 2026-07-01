@@ -344,6 +344,7 @@ typedef enum
 	CLI_CRASH,
 	CLI_TEXTURECOMPRESSION,
 	CLI_NOTEXTURECOMPRESSION,
+	CLI_HQ_TEXTURES,
 	CLI_GFXBACKEND,
 	CLI_GFXDEBUG,
 	CLI_GAMEPAD,
@@ -436,6 +437,7 @@ static const struct poptOption *getOptionsTable()
 		{ "host", POPT_ARG_NONE, CLI_HOSTLAUNCH, N_("Go directly to host screen"),        nullptr },
 		{ "texturecompression", POPT_ARG_NONE, CLI_TEXTURECOMPRESSION, N_("Enable texture compression"), nullptr },
 		{ "notexturecompression", POPT_ARG_NONE, CLI_NOTEXTURECOMPRESSION, N_("Disable texture compression"), nullptr },
+		{ "hq-textures", POPT_ARG_NONE, CLI_HQ_TEXTURES, N_("Enable High Quality Textures (no lossy compression + max anisotropy)"), nullptr },
 		{ "gfxbackend", POPT_ARG_STRING, CLI_GFXBACKEND, N_("Set gfx backend"),
 			"(opengl, opengles"
 #if defined(WZ_VULKAN_ENABLED)
@@ -1096,6 +1098,10 @@ bool ParseCommandLine(int argc, const char * const *argv)
 
 		case CLI_NOTEXTURECOMPRESSION:
 			wz_texture_compression = false;
+			break;
+
+		case CLI_HQ_TEXTURES:
+			wz_high_quality_textures = true;
 			break;
 
 		case CLI_GFXBACKEND:
