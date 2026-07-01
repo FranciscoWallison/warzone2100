@@ -59,6 +59,7 @@ void screen_Display();
 void screenDumpToDisk(const char *path, const char *level);
 
 extern bool wz_texture_compression;
+extern bool wz_high_quality_textures;
 extern bool uses_gfx_debug;
 
 void screenDoDumpToDiskIfRequired();
