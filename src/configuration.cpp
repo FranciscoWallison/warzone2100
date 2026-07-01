@@ -425,6 +425,7 @@ bool loadConfig()
 		setMouseWarp(value.value());
 	}
 	wz_texture_compression = iniGetBool("textureCompression", true).value();
+	wz_high_quality_textures = iniGetBool("highQualityTextures", false).value();
 	showFPS = iniGetBool("showFPS", false).value();
 	showUNITCOUNT = iniGetBool("showUNITCOUNT", false).value();
 	if (auto value = iniGetIntegerOpt("cameraSpeed"))
@@ -842,6 +843,7 @@ bool saveConfig()
 	iniSetInteger("edgeScrollOutsideWindow", (int)(getEdgeScrollOutsideWindowBounds()));
 	iniSetInteger("cursorScale", (int)war_getCursorScale());
 	iniSetInteger("textureCompression", (wz_texture_compression) ? 1 : 0);
+	iniSetInteger("highQualityTextures", (wz_high_quality_textures) ? 1 : 0);
 	iniSetInteger("showFPS", (int)showFPS);
 	iniSetInteger("showUNITCOUNT", (int)showUNITCOUNT);
 	iniSetInteger("shadows", (int)(getDrawShadows()));	// shadows

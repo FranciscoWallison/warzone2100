@@ -54,10 +54,11 @@ void gfx_api::initBestRealTimeCompressionFormats()
 		bestAvailableCompressionFormat_GameTextureRGB[target] = nullopt;
 	}
 
-	if (!wz_texture_compression)
+	if (!wz_texture_compression || wz_high_quality_textures)
 	{
-		// Texture compression is disabled - leave all bestAvailableCompressionFormat_* variables as nullopt
-		debug(LOG_3D, "Real-time texture compression formats: disabled");
+		// Texture compression is disabled (or High Quality Textures is on) - leave all
+		// bestAvailableCompressionFormat_* variables as nullopt (textures uploaded uncompressed)
+		debug(LOG_3D, "Real-time texture compression formats: disabled%s", wz_high_quality_textures ? " (high quality textures)" : "");
 		return;
 	}
 

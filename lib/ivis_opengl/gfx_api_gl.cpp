@@ -2825,7 +2825,7 @@ void gl_context::bind_textures(const std::vector<gfx_api::texture_input>& textur
 				glTexParameteri(type, GL_TEXTURE_WRAP_T, GL_REPEAT);
 				if (GLAD_GL_EXT_texture_filter_anisotropic)
 				{
-					glTexParameterf(type, GL_TEXTURE_MAX_ANISOTROPY_EXT, MIN(4.0f, maxTextureAnisotropy));
+					glTexParameterf(type, GL_TEXTURE_MAX_ANISOTROPY_EXT, wz_high_quality_textures ? maxTextureAnisotropy : MIN(4.0f, maxTextureAnisotropy));
 				}
 				break;
 			case gfx_api::sampler_type::anisotropic:
@@ -2835,7 +2835,7 @@ void gl_context::bind_textures(const std::vector<gfx_api::texture_input>& textur
 				glTexParameteri(type, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
 				if (GLAD_GL_EXT_texture_filter_anisotropic)
 				{
-					glTexParameterf(type, GL_TEXTURE_MAX_ANISOTROPY_EXT, MIN(4.0f, maxTextureAnisotropy));
+					glTexParameterf(type, GL_TEXTURE_MAX_ANISOTROPY_EXT, wz_high_quality_textures ? maxTextureAnisotropy : MIN(4.0f, maxTextureAnisotropy));
 				}
 				break;
 		}

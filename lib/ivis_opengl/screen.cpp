@@ -60,6 +60,8 @@
 
 /* global used to indicate preferred internal OpenGL format */
 bool wz_texture_compression = true;
+/* High Quality Textures: forca upload sem compressao lossy + anisotropia maxima */
+bool wz_high_quality_textures = false;
 
 static bool		bBackDrop = false;
 static char		screendump_filename[PATH_MAX];
