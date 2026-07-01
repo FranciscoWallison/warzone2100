@@ -1,0 +1,1296 @@
+// a2x: --dblatex-opts "-P latex.output.revhistory=0"
+
+
+Guia de Início Rápido do Warzone 2100
+=====================================
+
+
+Introdução
+----------
+
+Este guia vai te ajudar a começar a jogar Warzone 2100.
+
+O Projeto Warzone 2100 tem seu site em image:../images/www.png[URL]
+https://wz2100.net.
+
+Se você quiser conversar com outros jogadores de Warzone 2100, visite o fórum em
+image:../images/www.png[URL] https://forums.wz2100.net
+
+Você também pode falar com a gente e com outros jogadores no nosso servidor
+oficial do Discord ou nas salas de IRC aqui: image:../images/www.png[URL] https://wz2100.net/webchat/
+
+Se você tem interesse em desenvolver o Warzone 2100, o Projeto está sempre
+procurando ajuda. Acesse image:../images/www.png[URL] https://github.com/Warzone2100/warzone2100
+
+Se quiser mais informações sobre o Warzone 2100, incluindo dados de mods,
+estatísticas de componentes individuais e mais, acesse image:../images/www.png[URL]
+https://betaguide.wz2100.net
+
+Divirta-se com o Warzone 2100!
+
+image::../images/logo.png[align="center"]
+
+
+Interface
+---------
+
+A interface pode ser ligada ou desligada com Tab.
+
+image:../images/interface.jpg[]
+
+- 'Mensagens (topo)': o banco de mensagens. Guarda as últimas mensagens que o
+jogo te deu. Para ver mais das suas mensagens recentes, pressione a tecla
+`/~ (a tecla de crase/til; geralmente entre Esc e Tab).
+- 'Tempo restante (canto superior direito)': o limite de tempo. Só aparece na
+Campanha. Se chegar a zero, você perde!
+- 'Painel de comando (canto inferior esquerdo)': o <<_command_panel, painel de comando>>.
+- 'Energia (parte de baixo)': a <<_power, barra de energia>>.
+- 'Mapa (canto inferior direito)': o <<_minimap, minimapa>>.
+
+
+Controlando a Câmera
+--------------------
+
+.O que é a Câmera?
+Quando o Warzone foi lançado em 1999, foi um dos primeiros jogos de estratégia
+em tempo real a ser em 3D. Hoje a maioria dos jogos de estratégia em tempo real
+é em 3D, mas se você não está acostumado ou não sabe usar, deixa a gente te
+ajudar a aprender.
+
+
+.Controles básicos
+- 'Mover': para mover para onde você está olhando, leve o mouse até a borda da
+janela/tela, ou use as setas do teclado.
+- 'Girar': para girar a visão, segure o botão direito do mouse e mova o mouse
+em qualquer direção. (A visão também pode ser girada com 8 e 2 (cima/baixo), ou
+4 e 6 (esquerda/direita) no teclado numérico.)
+- 'Zoom': para aproximar ou afastar, use as teclas + ou - do teclado numérico,
+ou use a roda do mouse.
+
+.Controles avançados
+- 'Voltar a visão para o norte': se o ângulo da câmera parecer estranho,
+pressionar Backspace redefine a visão para o norte.
+- 'Seguir unidade': pressione a barra de espaço com unidades selecionadas e a
+câmera vai segui-las. Pressione a barra de espaço de novo para parar de seguir.
+- 'Ir para a base': pressione B para centralizar a visão no seu Centro de
+Comando. Útil se você precisa voltar rápido para a base.
+
+
+[[_minimap]]
+Minimapa
+--------
+
+O minimapa é uma ferramenta muito útil no campo de batalha do Warzone. Ele te
+ajuda a acompanhar suas unidades e estruturas, as unidades e estruturas dos
+oponentes (dentro do alcance) e o próprio mapa. Ordens podem ser dadas pelo
+minimapa, e ele pode ser usado para pular rapidamente para uma parte do mapa.
+
+O minimapa é liberado depois que você constrói o Centro de Comando.
+
+image:../images/minimap.jpg[]
+
+- 'Trapézio branco fraco': é uma representação visual da sua câmera no radar. A
+ponta larga aponta para onde você está olhando. A ponta estreita é onde a
+câmera está.
+- 'Áreas transparentes': inexploradas, vão se abrindo à medida que você envia
+unidades para elas. Essas áreas ficam pretas na tela.
+- 'Área verde': unidades ou estruturas que pertencem ao jogador verde (neste
+caso, nós).
+- 'Área amarela/cinza/preta/vermelha/azul/ciano/magenta': unidades ou estruturas
+que pertencem ao jogador amarelo/cinza/preto/vermelho/azul/ciano/magenta (não
+mostrado).
+- 'Área piscando em vermelho/branco': unidades ou estruturas suas que estão sob
+ataque.
+- 'Pulso verde': artefato. Necessário para pesquisar tecnologias na Campanha. Em
+Skirmish/Multijogador, pode ser encontrado destruindo estruturas da base
+inimiga.
+- 'Pulso vermelho': na Campanha, uma base inimiga ou outro ponto de interesse. No
+multijogador, é usado como sinalizador para alertar outros jogadores.
+- 'Pulso azul': um <<_power, recurso de petróleo>> livre.
+
+
+.Controles
+- 'Mover a câmera': clique com o botão direito em qualquer lugar do minimapa
+para mover a câmera.
+- 'Dar ordens': se você tem unidades selecionadas, clique em qualquer lugar do
+radar e as unidades vão executar aquela ordem.
+- 'Aproximar e afastar': passe o mouse sobre o minimapa e mova a roda do mouse
+para cima ou para baixo.
+
+
+[[_power]]
+Energia
+-------
+
+image:../images/powerbar.jpg[]
+
+'A barra de energia'
+
+image:../images/oilresource.jpg[]
+
+'Um recurso de petróleo livre e uma torre de petróleo trabalhando duro'
+
+Na vida real, dinheiro é poder, mas no Warzone 2100 a energia é o dinheiro. Você
+gasta energia para construir estruturas, fabricar unidades e pesquisar
+melhorias/novas tecnologias.
+
+Obtendo Energia
+~~~~~~~~~~~~~~~
+Então, como conseguir energia? A energia é gerada por Geradores de Energia
+alimentados por Torres de Petróleo. Cada Gerador de Energia usa até 4 Torres de
+Petróleo, então, por exemplo, se você tem 10 Torres de Petróleo, precisa de 3
+Geradores de Energia para gerar o máximo de energia nesse caso.
+
+As torres de petróleo precisam ser construídas sobre recursos de petróleo, mas
+os Geradores de Energia podem ficar em qualquer lugar do mapa. Lembre-se de que
+geradores adicionais além de um para cada quatro torres não trazem nenhum
+benefício. Note também que construir montes de geradores de energia não vai
+fazer nada enquanto você não tiver pelo menos uma torre de petróleo para cada
+um.
+
+Preços
+~~~~~~
+
+Os ícones nos menus de Fabricação, Construção e Pesquisa têm barras amarelas
+representando o preço:
+
+image:../images/cheapweapon.png[] 'Arma barata'
+
+image:../images/expensiveweapon.png[] 'Arma cara'
+
+Quando você passa o mouse sobre um ícone, a barra de energia mostra uma seção
+verde representando o preço. Se você não puder pagar, a barra de energia fica
+vermelha.
+
+A quantidade de energia que você tem é mostrada bem à esquerda da barra de
+energia. Se você passar o mouse sobre um ícone e tiver energia suficiente para
+obtê-lo, o número mostra quanto de energia vai custar. Se você não puder pagar,
+o número mostra quanta energia você precisa para conseguir pagar.
+
+A energia é retirada assim que o ícone é clicado. Desde que você tenha energia
+suficiente para a atividade, a barra de progresso inicial se enche rápido de
+verde (mais devagar em ações mais caras) e a construção ou pesquisa começa. Uma
+barra de progresso amarela então acompanha o progresso da atividade atual.
+
+Melhorias
+~~~~~~~~~
+
+image:../images/powerupgrade.png[]
+
+Os Geradores de Energia podem receber um Módulo de Energia construído em cima
+para extrair mais energia. Os Módulos de Energia precisam ser pesquisados antes
+de você poder construí-los. Também existem várias melhorias pesquisáveis que
+aumentam a quantidade de energia que você recebe.
+
+
+Comandando Unidades
+-------------------
+
+Usando Unidades
+~~~~~~~~~~~~~~~
+
+Já se acostumou com a interface? Então é hora de realmente usar nossas unidades.
+
+Selecionando e movendo unidades
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Para selecionar uma unidade ou ciborgue, clique nela com o botão esquerdo.
+Várias unidades podem ser selecionadas clicando e arrastando, envolvendo as
+unidades no 'quadrado' desenhado, ou segurando Ctrl ou Shift e clicando em
+várias unidades.
+
+Para mover as unidades selecionadas, clique com o botão esquerdo no terreno do
+mapa. Isso também pode ser feito sobre áreas pretas do mapa para explorar a
+região. Para atacar uma unidade inimiga, clique nela com o botão esquerdo. Você
+pode desmarcar uma unidade (ou um grupo de unidades) com um clique direito.
+
+Fila e pontos de passagem
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Você pode definir um caminho com pontos de passagem, que as unidades vão visitar
+na ordem. Você também pode selecionar uma fila de inimigos para as unidades
+atacarem. Segure Shift ou Ctrl ao selecionar unidades ou ao clicar em lugares
+para mover.
+
+Isso também funciona para enfileirar a construção de Torres de Petróleo e/ou
+estruturas em sequência: segure a tecla enquanto enfileira as estruturas que
+quer construir uma por uma, e solte a tecla quando terminar.
+
+Grupos de Unidades
+^^^^^^^^^^^^^^^^^^
+
+Para criar grupos de unidades, selecione as unidades que quiser e pressione
+Ctrl+['número'] para criar um grupo. Um grupo de unidades terá um número ao
+lado. Para selecionar um grupo que você criou, pressione ['número']. Grupos
+também podem ser selecionados com um duplo clique numa unidade do grupo. Para
+centralizar a câmera num grupo, pressione o ['número'] duas vezes.
+
+Defendendo
+^^^^^^^^^^
+
+Clique numa estrutura ou caminhão aliado com unidades de combate selecionadas (o
+cursor vira um escudo) e as unidades vão se mover para protegê-lo.
+
+[[_unit_orders_menu]]
+Menu de ordens da unidade
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+image:../images/unitordersmenu.jpg[]
+
+Clique com o botão direito numa unidade (ou selecione uma unidade e pressione
+NUM0 no teclado numérico) e um menu de ordens vai aparecer acima do painel de
+comando. Ele contém opções para configurar o comportamento da unidade.
+
+Clicar com o botão direito numa fábrica personaliza as ordens de todas as
+unidades futuras que aquela fábrica produzir.
+
+Alcance de ataque
+^^^^^^^^^^^^^^^^^^
+|====
+|image:../images/attackrange.jpg[] |'Alcance Ótimo': atira no alcance mais preciso
+(padrão)
+
+'Curto Alcance': aproxima-se para curto alcance e ataca
+
+'Longo Alcance': ataca a longa distância
+|====
+
+Limite de recuo
+^^^^^^^^^^^^^^^^
+|====
+|image:../images/retreatthreshold.jpg[] |'Vencer ou Morrer': sua unidade não recua
+a menos que receba ordem. (padrão)
+
+'Recuar com Dano Médio': sua unidade recua (volta para a instalação de reparo,
+QG ou zona de pouso) com dano médio (amarelo)
+
+'Recuar com Dano Pesado': sua unidade recua com dano pesado (vermelho)
+|====
+
+Disparo
+^^^^^^^
+|====
+|image:../images/firing.jpg[] |'Atirar à Vontade': atira em qualquer inimigo (padrão)
+
+'Revidar Fogo': só atira se for atacada
+
+'Não Atirar': as unidades não atiram
+|====
+
+Movimento
+^^^^^^^^^
+|====
+|image:../images/movement.jpg[] |'Patrulhar': anda em círculo numa posição. Basta
+clicar numa área depois de selecionar.
+
+'Perseguir': persegue o inimigo.
+
+'Guardar': fica perto de uma área ou estrutura. (padrão)
+
+'Manter Posição': não se move em nenhuma circunstância.
+|====
+
+Retorno
+^^^^^^^
+|====
+|image:../images/return.jpg[] |'Retornar para Reparo': a unidade volta para uma
+Instalação de Reparo
+
+'Retornar para o QG': a unidade volta para o Centro de Comando ou zona de pouso
+(campanha)
+
+'Ir para o Transporte': a unidade vai e embarca no transporte
+|====
+
+Reciclagem
+^^^^^^^^^^
+
+image:../images/recycling.jpg[]
+
+Reciclar uma unidade a envia para a Instalação de Reparo ou Fábrica mais próxima
+e a destrói. Metade da energia usada para fazê-la será reembolsada. O nível de
+experiência da unidade será passado para a próxima unidade fabricada.
+
+Experiência da unidade
+^^^^^^^^^^^^^^^^^^^^^^^
+
+Veja também: image:../images/www.png[URL] http://guide.wz2100.net/experience[Experiência
+da unidade]
+
+As unidades têm níveis de experiência dependendo de quantos abates elas têm. Um
+nível de experiência mais alto significa que a unidade é mais precisa, se move
+mais rápido e recebe menos dano. Um ícone mostrando a patente da unidade aparece
+ao lado da barra de vida dela.
+
+Hardpoints e bunkers
+^^^^^^^^^^^^^^^^^^^^^
+
+Hardpoints, bunkers e outras estruturas defensivas não podem receber ordem para
+atirar diretamente. Porém, você pode designar emplacamentos de artilharia para
+uma torre de sensor. Comandantes próximos com a opção 'suporte de fogo indireto'
+ativada também vão comandar essas estruturas.
+
+Unidades de fogo indireto e sensores
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Veja: <<_artillery_and_sensors, Sensores e artilharia>>
+
+
+Comandando VTOLs
+----------------
+
+Os VTOLs são usados de forma parecida com as unidades terrestres. Porém, eles
+têm algumas diferenças. Para começar, eles podem 'voar'...
+
+Projeto e produção
+~~~~~~~~~~~~~~~~~~~
+
+Para produzir unidades VTOL, você vai precisar da image:../images/www.png[URL]
+http://guide.wz2100.net/r/vtolpropulsion[Propulsão VTOL] e da
+image:../images/www.png[URL] http://guide.wz2100.net/r/vtolfactory[Fábrica de VTOL]
+pesquisadas, e de uma Fábrica de VTOL construída. Você também deve pesquisar e
+construir alguns image:../images/www.png[URL] http://guide.wz2100.net/r/vtolrearmingpad[Pads
+de Reabastecimento de VTOL], senão eles não vão conseguir recarregar munição.
+
+Antes de produzir uma unidade VTOL, você precisa projetá-la. Os VTOLs são
+projetados da mesma forma que as unidades normais (basta selecionar a 'propulsão
+VTOL'), mas usam armas um pouco diferentes (mais sobre isso depois).
+
+Os VTOLs só podem ser construídos em Fábricas de VTOL. As fábricas de VTOL podem
+ser melhoradas com módulos de fábrica; não é preciso pesquisar um "módulo de
+fábrica de VTOL" separado.
+
+Movendo
+~~~~~~~
+
+Depois de produzir um VTOL numa Fábrica de VTOL, ele vai voar e pousar no ponto
+de encontro. Os VTOLs podem receber ordem para se mover e atacar como qualquer
+unidade normal. Embora possam voar sobre água e penhascos, eles não vão pousar
+sobre eles.
+
+Atacando
+~~~~~~~~
+
+As armas dos VTOLs diferem bastante das armas normais.
+
+Para atacar com um VTOL, selecione-o e clique num inimigo como de costume. Porém,
+você pode ter notado a barra branca de munição abaixo da barra de vida dele
+quando começa a atacar.
+
+Diferente das unidades terrestres, que recarregam automaticamente, os VTOLs
+carregam uma quantidade limitada de munição. Quando essa munição acaba, o VTOL
+não pode atacar até reabastecer. Um VTOL sem munição vai automaticamente
+encontrar um pad de reabastecimento de VTOL para recarregar e se reparar (e
+volta a atacar quando estiver totalmente reabastecido), ou pode ser reabastecido
+manualmente selecionando-o e clicando num pad de reabastecimento.
+
+Diferente de outras unidades, que geralmente atacam o alvo mais próximo, os
+VTOLs não atacam nada automaticamente. Porém, selecionando um VTOL e dando
+alt+clique numa área, o VTOL vai patrulhar a região entre sua posição atual e o
+local clicado, e atacar qualquer coisa por perto. Como alternativa, eles podem
+ser designados a torres VTOL de ataque e torres VTOL de contrabateria, o que faz
+com que funcionem de forma parecida com a <<_artillery_and_sensors, artilharia
+designada a torres de sensor>>.
+
+Armas de VTOL
+~~~~~~~~~~~~~
+
+A maioria das armas tem um equivalente VTOL, que causa aproximadamente o dobro
+de dano, mas tem munição limitada. As versões VTOL das armas normais, assim como
+os ciborgues, não precisam ser pesquisadas separadamente.
+
+Além das versões VTOL de armas diretas terrestres, os VTOLs também podem usar
+image:../images/www.png[URL] http://guide.wz2100.net/w/#vtolbombs[armas de bomba].
+Essas armas são o equivalente da artilharia e são muito poderosas.
+
+Defendendo contra VTOLs
+~~~~~~~~~~~~~~~~~~~~~~~
+
+Os VTOLs não são unidades terrestres, então a maioria das armas terrestres não
+consegue acertá-los. Eles só podem ser atingidos por armas antiaéreas (muitas
+vezes abreviadas como AA, que só acertam unidades aéreas) ou versáteis (que
+acertam ar ou solo).
+
+Existem só algumas armas versáteis: metralhadoras, lasers e o Módulo de
+Minifoguetes. Foguetes e mísseis também são versáteis, mas só quando montados num
+ciborgue ou VTOL. Além de serem incomuns, as armas versáteis não causam tanto
+dano aos VTOLs quanto a antiaérea dedicada, então ter alguma AA é recomendado
+contra VTOLs.
+
+
+Outras ordens
+~~~~~~~~~~~~~
+
+'Patrulhar': na caixa de Ordens da Unidade (clique direito, lembra?), há alguns
+ícones novos. Patrulhar faz a mesma coisa que o alt+clique: mover de um lado
+para o outro entre a posição atual e o local clicado, atacando qualquer coisa
+perto do caminho e reabastecendo quando precisa antes de voltar a defender.
+
+'Círculo': na caixa de Ordens da Unidade, ao lado de Patrulhar, está o botão
+Círculo. Clique nele e depois clique numa área do chão, e os VTOLs selecionados
+vão decolar e voar em círculo acima do ponto escolhido. Assim como no Patrulhar,
+eles vão atacar qualquer coisa que chegue perto e reabastecer automaticamente.
+
+
+[[_command_panel]]
+Painel de Comando
+-----------------
+
+Existem seis interfaces diferentes do painel de comando, mais um botão central.
+Você abre uma interface de comando pressionando o botão apropriado.
+|===
+|image:../images/commandpanel.png[] |F1: <<_manufacturing, Fabricação>>
+
+F2: <<_research, Pesquisa>>
+
+F3: <<_building, Construção>>
+
+F4: <<_design, Projeto>>
+
+F5: <<_intelligence_display, Painel de Inteligência>>
+
+F6: <<_commanders, Comandantes>>
+|===
+
+O botão do meio fecha qualquer interface de comando aberta.
+
+[[_manufacturing]]
+Fabricação
+----------
+
+Fabricar unidades é, de certa forma, parecido com construir estruturas. Os
+prédios que constroem unidades são as Fábricas, Fábricas de Ciborgues e Fábricas
+de VTOL.
+
+image:../images/manufacture-select.jpg[]
+
+'Selecionando uma unidade para ser fabricada'
+
+image:../images/manufacture.jpg[]
+
+'A unidade sendo fabricada'
+
+Construindo uma Unidade
+~~~~~~~~~~~~~~~~~~~~~~~
+
+Para fabricar uma unidade, pressione o botão Fabricação. Uma barra de Busca
+Rápida vai abrir na parte de baixo da tela, entre o radar e o Painel de Comando.
+
+A linha de baixo das duas contém todas as Fábricas, Fábricas de Ciborgues e
+Fábricas de VTOL construídas. Clicar nela move a câmera para a estrutura.
+
+Para fabricar uma unidade, clique no espaço acima de uma fábrica na barra de
+Busca Rápida. Se essa fábrica for capaz de construir a unidade, ela vai aparecer
+num menu no lado esquerdo da tela.
+
+Uma fábrica só pode construir uma unidade se a propulsão da unidade for de certo
+tipo (unidade/ciborgue/VTOL) e se a fábrica tiver módulos suficientes aplicados.
+
+Enfileirando Unidades
+~~~~~~~~~~~~~~~~~~~~~
+
+Você pode construir até nove unidades clicando repetidamente na unidade. Você
+também pode clicar com o botão direito na unidade para reduzir a quantidade a
+construir; clicar com o botão direito numa unidade sem nada na fila define a fila
+para 9.
+
+Status de Construção
+~~~~~~~~~~~~~~~~~~~~
+
+Enquanto uma unidade está sendo construída, ela é mostrada na barra de Busca
+Rápida acima da fábrica que a constrói. Se a barra estiver verde, a unidade está
+acumulando energia para ser construída. Se a barra estiver amarela, a unidade
+está sendo construída.
+
+Pontos de Encontro
+~~~~~~~~~~~~~~~~~~
+
+Quando a unidade termina de ser construída, ela surge ao lado da fábrica e então
+segue para o ponto de encontro designado da fábrica, definido quando a fábrica
+foi construída. Clicar com o botão direito na fábrica na linha de baixo da Busca
+Rápida centraliza a câmera no ponto de surgimento. Clicar num ponto de encontro
+permite movê-lo de forma parecida com a construção de uma estrutura. Note que
+mover um ponto de encontro enquanto uma unidade está indo até ele não afeta o
+caminho dela.
+
+image:../images/rallypoints.jpg[]
+
+'Pontos de encontro (no sentido horário, a partir do canto superior esquerdo):
+ponto de encontro de Ciborgue, ponto de encontro de Fábrica, Instalação de
+Reparo, ponto de encontro de VTOL'
+
+Produção em loop
+~~~~~~~~~~~~~~~~
+
+Você também pode definir produção em loop clicando com o botão esquerdo e
+direito no botão de loop, na coluna esquerda perto do topo, que repete a
+sequência que está sendo construída. Isso pode ser definido como infinito
+clicando com o botão direito quando o número marca zero.
+
+[[_research]]
+Pesquisa
+--------
+
+Pesquisar tecnologias é muito simples. Você só pode pesquisar tecnologias com
+Instalações de Pesquisa.
+
+image:../images/research-select.jpg[]
+
+'Selecionando um tópico para pesquisar'
+
+image:../images/research.jpg[]
+
+'O tópico sendo pesquisado'
+
+Pesquisando
+~~~~~~~~~~~
+
+Um Jogador
+^^^^^^^^^^
+
+No modo um jogador, você pode coletar Artefatos dos inimigos e pesquisá-los. Os
+Artefatos são pequenas caixas brancas com uma chave inglesa acima e podem ser
+coletados por qualquer unidade que se mover até eles.
+
+Multijogador/Skirmish
+^^^^^^^^^^^^^^^^^^^^^
+
+Nos jogos Multijogador/Skirmish, você progride ao longo de uma "árvore de
+tecnologia": alguns tópicos podem ser pesquisados, o que por sua vez desbloqueia
+mais tecnologias, também chamado de avançar 'na árvore de tecnologia'.
+
+Pesquisando um tópico
+~~~~~~~~~~~~~~~~~~~~~
+
+Quando você abre o menu de Pesquisa, um menu de Busca Rápida com duas linhas
+aparece na parte de baixo da tela. Todas as suas instalações de pesquisa são
+mostradas na segunda linha. Clicar numa instalação de pesquisa move a câmera até
+ela.
+
+Clicar no ícone em branco acima de uma instalação mostra um conjunto de ícones à
+esquerda. Você pode passar o mouse sobre um ícone para ver o nome. Clique num
+ícone para começar a pesquisá-lo. Cada centro só pode pesquisar uma tecnologia
+por vez.
+
+Enquanto uma instalação pesquisa, ela mostra uma barra na área de Busca Rápida.
+Se a barra estiver verde, a instalação está acumulando energia. Se estiver
+amarela, o tópico está sendo pesquisado.
+
+Conclusão da Pesquisa
+~~~~~~~~~~~~~~~~~~~~~
+
+Quando a pesquisa é concluída, o jogo te informa com uma mensagem e tocando um
+som "Pesquisa Concluída". Se foi um avanço tecnológico importante, uma entrada é
+feita no Painel de Inteligência. Você pode conferir a entrada para mais
+informações sobre a pesquisa.
+
+Melhorias de Pesquisa
+~~~~~~~~~~~~~~~~~~~~~
+
+Você pode pesquisar um Módulo de Pesquisa ao longo do jogo. Para aplicá-lo,
+selecione um caminhão e clique com o botão esquerdo num Centro de Pesquisa não
+melhorado, e o caminhão o construirá. Porém, o tópico que você está pesquisando
+ficará pausado até o módulo ser construído; é sua escolha construí-lo ou esperar
+até terminar.
+
+Outras melhorias também estão disponíveis para os Centros de Pesquisa, mas essas
+são aplicadas instantaneamente, sem precisar construir nada.
+
+[[_building]]
+Construção
+----------
+
+Construir estruturas é absolutamente vital no Warzone 2100, desde Fábricas que
+constroem unidades até Centros de Pesquisa que pesquisam novas tecnologias.
+
+A construção pode ser feita por unidades com Caminhões como torretas e/ou por
+Engenheiros de Combate.
+
+image:../images/building-select.jpg[]
+
+'Selecionando uma estrutura para construir'
+
+image:../images/building.jpg[]
+
+'Selecionando uma área para construir a estrutura'
+
+Construindo uma Estrutura
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Para construir, você precisa selecionar Construção no Painel de Comando, e isso
+vai trazer duas linhas de ícones na parte de baixo da tela, entre o Painel de
+Comando e o Radar. Cada uma representa uma unidade (um caminhão ou um Engenheiro
+de Combate) capaz de construir. Clicar na linha de baixo dos ícones aproxima a
+câmera da unidade. A linha de cima dos ícones abre uma barra no lado esquerdo da
+tela (diagrama 1). As duas colunas de ícones representam as estruturas que você
+pode construir. Clique numa estrutura nas colunas para selecioná-la para
+construção. Você pode passar o mouse sobre um ícone para ver o nome da estrutura.
+
+Selecionando um local
+~~~~~~~~~~~~~~~~~~~~~
+
+Quando você seleciona uma estrutura, os dois menus se fecham (como clicar no
+botão do meio). Uma silhueta vai aparecer no mundo. É onde a sua estrutura será
+colocada. Mova o quadrado movendo o mouse. Clique para posicionar o local de
+construção da estrutura. Se a silhueta estiver vermelha, a estrutura não pode ser
+colocada. Para construir "muros" (ao construir defesas), você pode clicar e
+arrastar a caixa para desenhar um muro.
+
+Torres de Petróleo
+~~~~~~~~~~~~~~~~~~
+
+As Torres de Petróleo só podem ser construídas sobre Recursos de Petróleo que não
+estejam em chamas. Fogos nos Recursos de Petróleo são causados por inimigos
+destruindo suas Torres de Petróleo; eles vão se apagar com o tempo. As Torres de
+Petróleo são construídas automaticamente se um caminhão estiver selecionado e
+você clicar com o botão esquerdo num Recurso de Petróleo.
+
+A unidade que você selecionou para construir a estrutura vai se mover para
+construí-la.
+
+Se você abrir o menu de Construção de novo, o status da unidade é mostrado na
+barra de Busca Rápida. Se houver uma estrutura sem barra na linha de cima da
+Busca Rápida acima de uma unidade, a unidade está indo até o local de construção.
+Se houver uma barra verde, ela está acumulando energia para construir. Se houver
+uma barra amarela, ela está construindo o local.
+
+Reparando
+~~~~~~~~~
+
+Você pode designar uma unidade para reparar uma estrutura selecionando-a e
+clicando com o botão esquerdo num prédio.
+
+Demolindo
+~~~~~~~~~
+
+Demolir um prédio é quase tão simples quanto construir um. Selecione "Demolir
+Estrutura" no menu de Estrutura e clique num prédio para demolir. A unidade vai
+se mover até o prédio e destruí-lo, te devolvendo metade da energia usada na
+construção da estrutura. A opção de Demolir Estrutura estará sempre disponível,
+do começo ao fim do jogo.
+
+Trabalho em equipe
+~~~~~~~~~~~~~~~~~~
+
+Você pode designar caminhões/ciborgues extras a um prédio para construí-lo mais
+rápido. Basta selecionar uma unidade e clicar com o botão esquerdo numa
+estrutura, e a unidade vai se mover até o prédio e começar a ajudar na
+construção.
+
+Hardcrete e Barreiras Antitanque
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Você pode se perguntar o que o Hardcrete e as Barreiras Antitanque fazem. Bom,
+eles não fazem nada. Ficam ali parados e impedem que suas unidades e as unidades
+inimigas passem.
+
+
+[[_design]]
+Projeto
+-------
+
+Você precisa projetar novas unidades e VTOLs se quiser dominar seus inimigos e
+sentir aquele doce gosto da vitória. Esse aspecto do jogo é o que torna o Warzone
+2100 único à sua maneira. Note que você precisa de um Centro de Comando para
+poder projetar unidades!
+
+image:../images/design.jpg[]
+
+'Projetando uma nova unidade'
+
+image:../images/design-unit.jpg[]
+
+'A unidade sendo projetada'
+
+Projetando uma unidade
+~~~~~~~~~~~~~~~~~~~~~~
+
+Para criar uma nova unidade, selecione o ícone Projeto no Painel de Comando. Isso
+faz aparecer duas colunas à esquerda da tela. Para criar um novo projeto,
+selecione o corpo verde. Para selecionar outra unidade para editar, basta clicar
+nela.
+
+Projetar uma nova unidade é simples. É um procedimento de três passos: selecionar
+um corpo, um sistema de propulsão e uma torreta. Os três escolhidos resultam
+numa nova unidade.
+
+image:../images/design-more.png[]
+
+'No sentido horário, a partir do canto superior esquerdo: selecionar um corpo,
+tipo de propulsão, torreta e fechar o menu'
+
+Projetando a unidade
+~~~~~~~~~~~~~~~~~~~~
+
+Quando uma nova unidade é iniciada, uma lista de corpos aparece à direita, com um
+contorno verde de um corpo no centro. Uma lista de corpos em duas colunas aparece
+à direita. Selecione um para avançar para a próxima seção: o tipo de propulsão.
+Selecione um tipo e avance para a torreta. Existem dois tipos de torretas, armas
+e sistemas. Ambos são definidos no topo das duas colunas por botões: você pode
+alternar clicando no botão respectivo. Selecione uma torreta e pronto.
+
+image:../images/design-screen.jpg[]
+
+A metade de cima do Projeto (sem os projetos concluídos)
+
+1. O nome de uma unidade. Você pode clicar aqui e mudar digitando.
+
+2. Clique aqui para mudar o corpo de um projeto.
+
+3. Clique aqui para mudar o tipo de propulsão de um projeto.
+
+4. Clique aqui para mudar a torreta de um projeto.
+
+5. Clique aqui para excluir o projeto selecionado (só funciona com projetos
+concluídos)
+
+6. Energia necessária para fazer a unidade
+
+7. Pontos de vida que a unidade tem
+
+8. Selecionar as torretas de Sistema (só torreta, só unidades normais)
+
+9. Selecionar as torretas de Arma (só torreta, só unidades normais)
++
+image:../images/design-bars.jpg[]
+
+10. Quão rápido a unidade se move em estradas
+
+11. Quão rápido a unidade se move fora de estrada
+
+12. Quão rápido a unidade se move sobre a água
+
+13. Peso da unidade (afeta a velocidade e a durabilidade da unidade)
+
+[[_intelligence_display]]
+Painel de Inteligência
+----------------------
+
+Embora o Painel de Inteligência não tenha um propósito tão grande quanto o
+restante das funções, ele ainda é muito útil: contém um registro de toda a
+tecnologia que você pesquisou e o objetivo da sua missão nas missões de Campanha.
+
+image:../images/intelligencedisplay.jpg[]
+
+'Painel de inteligência com uma informação selecionada'
+
+O que é exibido
+~~~~~~~~~~~~~~~
+
+Quando você abre o Painel de Inteligência, duas linhas de ícones aparecem na
+parte de baixo da tela. Selecionar um ícone exibe informações no meio da tela.
+Isso é útil para olhar as tecnologias que você pesquisou. Durante a Campanha, a
+inteligência sempre exibida é o objetivo da sua missão.
+
+Não Paramos Por Ninguém
+~~~~~~~~~~~~~~~~~~~~~~~
+
+Note que, embora o Painel de Inteligência pause o jogo no modo Campanha, ele não
+faz isso no Multijogador e no Skirmish!
+
+[[_commanders]]
+Comandantes
+-----------
+
+image:../images/commander.png[]
+
+As torretas de comando são usadas de forma muito parecida com os
+<<_artillery_and_sensors, sensores>>, exceto que podem comandar qualquer unidade
+de ataque, não só artilharia. No começo elas estão limitadas a ter 6 unidades de
+ataque não artilharia designadas, mas esse limite sobe em 2 a cada vez que o
+comandante ganha uma patente, o que pode acontecer relativamente rápido.
+
+As torretas de comando dão um image:../images/www.png[URL]
+http://guide.wz2100.net/experience[bônus de precisão, blindagem e velocidade de
+movimento] a todas as unidades designadas a elas.
+
+image:../images/commander-panel.jpg[]
+
+O painel de Comandantes. Note a semelhança com o <<_unit_orders_menu, painel de
+Ordens da Unidade>>.
+
+Pré-requisitos
+~~~~~~~~~~~~~~
+
+Os comandantes exigem que você pesquise a tecnologia Comandante.
+
+Anexando
+~~~~~~~~
+
+Para anexar uma unidade a um Comandante, selecione uma unidade e depois clique
+com o botão esquerdo no Comandante ao qual quer anexar a unidade. Um símbolo vai
+aparecer ao lado da unidade para indicar que ela está anexada.
+
+Limites
+~~~~~~~
+
+Cuidado, porém; os Comandantes têm um limite de unidades de fogo direto (por
+exemplo, metralhadoras) que é afetado pelo próprio nível de experiência deles. Os
+níveis são ganhos quando o Comandante alcança 2 abates, 4, 8, 16, 32, 64 e assim
+por diante. Cada nível de experiência permite ao Comandante 2 unidades de fogo
+direto a mais. Porém, um Comandante pode ter quantas unidades de fogo indireto
+quiser.
+
+Desanexando
+~~~~~~~~~~~
+
+Para desanexar uma unidade de um Comandante, selecione a unidade que quer
+desanexar, segure a tecla Control e dê uma nova ordem à unidade (por exemplo,
+mover).
+
+Marcando um alvo
+~~~~~~~~~~~~~~~~
+
+Você pode designar um alvo selecionando um Comandante e clicando com o botão
+direito numa unidade. Isso permite que qualquer unidade anexada tenha maior
+precisão ao atirar numa unidade marcada.
+
+Centro de Comando da Unidade Comandante
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Um Centro de Comando da Unidade Comandante é parecido com um Centro de Comando da
+Unidade, mas tem botões extras.
+
+Designação de Fábrica
+~~~~~~~~~~~~~~~~~~~~~
+
+image:../images/commander-factory-assignment.jpg[]
+
+'Os botões de designação de Fábrica ao Comandante'
+
+Você pode designar uma fábrica a um Comandante. Isso faz com que as unidades
+fabricadas pela fábrica sejam automaticamente designadas ao grupo do Comandante.
+Para isso, abra o menu de Comandantes clicando com o botão esquerdo no Comandante
+e abrindo o menu de Comandantes, ou clique com o botão direito no Comandante, e
+clique no NÚMERO da fábrica na parte de baixo do Console de Comando.
+
+Você pode achar o número da fábrica olhando o número na fábrica na barra de Busca
+Rápida de Fabricação. Há três linhas desses números: a de cima são as Fábricas
+normais; a do meio, as fábricas de Ciborgues; a de baixo, as fábricas de VTOL.
+
+Indo para reparos, já volto
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Uma unidade que recua da batalha para ir a uma instalação de reparo continua
+conectada ao grupo do seu Comandante. Quando termina de se reparar, volta para o
+seu Comandante.
+
+Suporte de fogo indireto
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+image:../images/indirect-fire-support.jpg[]
+
+'O ícone de suporte de fogo indireto'
+
+Você pode designar todos os poços e emplacamentos de fogo indireto ao alvo
+marcado por um Comandante, também conhecido como "suporte de fogo". Para isso,
+basta selecionar um Comandante, abrir o menu de Comandantes e selecionar o ícone
+acima. Para cancelar, selecione o mesmo botão, ou designe o suporte de fogo a
+outro comandante.
+
+
+[[_artillery_and_sensors]]
+Artilharia e Sensores
+---------------------
+
+Como revisão, tenha em mente que "artilharia" aqui se refere a todas as armas de
+fogo indireto, exceto a artilharia de minifoguetes (MRL) e os Mísseis Angel, ou
+seja:
+
+- Morteiros (morteiro, bombard, pepperpot, morteiro incendiário)
+- Obuses (obus, ground shaker, hellstorm, obus incendiário)
+- Foguetes ripple
+- Mísseis archangel
+
+Embora o MRL e os Mísseis Angel sejam armas de fogo indireto, eles devem ser
+usados como se usaria armas de fogo direto, já que o alcance deles é baixo o
+suficiente para o sensor interno dar conta; sensores externos são
+desnecessários.
+
+Sensores
+~~~~~~~~
+
+image:../images/sensor.png[]
+
+Os sensores comuns podem ser usados para reconhecimento e vigilância, mas têm um
+uso mais importante: apontar alvos para a artilharia.
+
+Usando sensores com artilharia
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+As armas de artilharia, sozinhas, não conseguem atirar além do alcance do sensor
+(8 tiles sem melhorias). Porém, até o humilde morteiro tem um alcance de arma de
+18 tiles. Para usá-lo, os jogadores precisam usar sensores.
+
+As estruturas de artilharia são as mais fáceis. Basta construir uma torre de
+sensor, e se a torre de sensor estiver mirando algo dentro do alcance de arma
+das suas estruturas de artilharia, elas vão atirar nele. Um tanque de artilharia,
+porém, precisa ser explicitamente designado a um sensor para funcionar. Selecione
+os tanques de artilharia e clique num sensor para designar o tanque ao sensor.
+
+image:../images/artillery-sensor.jpg[]
+
+'Artilharia designada a um sensor. Note o * ao lado deles, que indica que estão
+designados.'
+
+Uma vez que a artilharia esteja designada, se for designada a uma torre de
+sensor, essa torre vai mirar automaticamente os inimigos que entrarem no
+alcance.
+
+Se estiver designada a um tanque de sensor, o sensor pode ser usado para atacar
+inimigos selecionando o sensor e mirando um inimigo. Toda a artilharia designada
+ao sensor vai atacar o alvo dele.
+
+image:../images/artillery-far-away.jpg[]
+
+'Note que a artilharia pode estar bem longe: só a torreta de sensor precisa
+chegar dentro do alcance.'
+
+Para tirar a designação de uma unidade de um sensor, o jeito mais fácil é clicar
+com o botão direito nela e mandá-la se mover para algum lugar. Várias unidades
+podem ser selecionadas com ctrl+clique, e movidas todas juntas.
+
+Sensores CB
+~~~~~~~~~~~
+
+image:../images/cb-sensor.png[]
+
+Uma torre ou torreta CB (contrabateria) é usada de forma parecida com um sensor
+padrão; porém, tem um propósito especializado: contra-atacar a artilharia
+inimiga.
+
+As torres de sensor normais vão direcionar sua artilharia para atacar o que
+estiver por perto, mas as torres CB vão direcionar sua artilharia para atacar
+qualquer artilharia que estiver te atacando, mesmo que esteja mais longe do que
+outros alvos. Se você tiver uma torre CB e uma torre de sensor, as estruturas de
+artilharia vão atacar os alvos CB primeiro, e só os outros alvos quando você não
+estiver mais sendo bombardeado pela artilharia inimiga.
+
+image:../images/cb-sensor-vtol.png[]
+
+Um sensor CB de VTOL faz a mesma coisa, exceto com os VTOLs designados a ele.
+
+Torres de sensor
+~~~~~~~~~~~~~~~~
+
+As torres de sensor e as unidades de sensor têm várias diferenças importantes:
+
+- Uma torreta de sensor padrão tem alcance 12; uma torre de sensor padrão tem
+alcance 16 (torretas de sensor especiais têm o mesmo alcance da torre delas).
+- Uma torre de sensor não pode receber ordem para mirar algo específico; elas
+miram automaticamente na unidade mais próxima (exceto as torres CB e CB de VTOL).
+- Uma torreta de sensor não vai mirar nada automaticamente; ela precisa receber
+ordem manual para atacar um alvo.
+
+O que conta como sensor
+^^^^^^^^^^^^^^^^^^^^^^^
+image:../images/hq.png[] = image:../images/sensor-tower.png[]
+
+image:../images/satellite-uplink.png[] = image:../images/wss.png[]
+
+O Centro de Comando (QG) também é considerado uma torre de sensor padrão,
+enquanto o Centro de Enlace de Satélite também é considerado uma torre de sensor
+de Amplo Espectro. Além da funcionalidade normal deles, também podem ser usados
+como a torre de sensor correspondente (por exemplo, você pode designar artilharia
+a eles).
+
+Transportes
+-----------
+
+Os transportes são usados durante a campanha para transportar unidades de um
+setor para outro (conhecidas como 'Missões Externas'). No multijogador, são
+usados para transportar unidades de uma parte do mapa atual para outra.
+
+image:../images/transport.jpg[]
+
+'Um transporte com algumas unidades carregadas. O menu de transporte está
+aberto.'
+
+Campanha
+~~~~~~~~
+
+Carregando Unidades
+^^^^^^^^^^^^^^^^^^^
+
+Para carregar unidades num transporte, selecione as unidades desejadas e clique
+no transporte. Só 10 unidades podem ocupar um transporte por vez. O número de
+unidades que você carregou pode ser visto no canto superior esquerdo da tela, ao
+lado do botão de lançamento.
+
+Abrindo o Menu
+^^^^^^^^^^^^^^
+
+Para abrir o menu de um transporte, clique no próprio transporte. Na captura de
+tela, o menu está aberto.
+
+As unidades que já estão no transporte são listadas à direita.
+
+Lançando um Transporte
+^^^^^^^^^^^^^^^^^^^^^^
+
+Para lançar um transporte, clique no botão no canto superior esquerdo da tela. O
+transporte vai lançar e seguir para o destino.
+
+Missões Externas
+^^^^^^^^^^^^^^^^
+
+image:../images/awaymission.jpg[]
+
+'Entrincheirado na zona de pouso.'
+
+Chegada
+^^^^^^^
+
+Quando você chega ao destino, o transporte descarrega as unidades que você
+carregou nele e voa para longe.
+
+Operações Normais da Base
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Durante as missões externas, você ainda pode pesquisar, fabricar e projetar
+unidades. Basta fazer como faria normalmente, e vai acontecer lá na área da base.
+Você só pode construir com os caminhões que estão sob o seu controle, porém.
+Lembre-se de que você está numa missão externa, e em algumas missões você não
+recebe reforços, então planeje bem.
+
+Pedindo Reforços!
+^^^^^^^^^^^^^^^^^
+
+Nas missões em que você PODE pedir reforços, o botão de transporte deve estar no
+canto superior esquerdo da tela. Clique nele e você verá o menu de transporte,
+com uma pequena diferença: todas as unidades que você deixou sozinhas em casa
+estão no lado direito da tela.
+
+Para carregar unidades no transporte, clique nelas, e elas serão movidas do lado
+direito da tela para o esquerdo. Para lançar, aperte o botão de lançamento de
+novo. Para fechar essa tela, aperte o botão do meio no Painel de Comando.
+
+Suas unidades estarão a caminho. O cronômetro ao lado do botão de Transporte vai
+mostrar o tempo restante até suas unidades chegarem à sua localização.
+
+Me Leve Para Casa
+^^^^^^^^^^^^^^^^^
+
+Uma vez que suas unidades estão numa missão externa, elas não vão para casa até a
+missão ser concluída, ou até você tê-las matado. Acho que elas prefeririam a
+primeira opção.
+
+Transporte de Ciborgues
+^^^^^^^^^^^^^^^^^^^^^^^
+
+Como você pode ter adivinhado pelo nome, ele só pode carregar Ciborgues, sem
+unidades normais ou VTOLs. Os Transportes de Ciborgues só podem ser construídos
+por Fábricas de VTOL com 2 módulos anexados, e a tecnologia precisa ser
+pesquisada.
+
+Carregando
+^^^^^^^^^^
+
+Para carregar um ciborgue no transporte, selecione-o e clique no Transporte de
+Ciborgues. O ciborgue vai embarcar.
+
+Movendo
+^^^^^^^
+
+O Transporte de Ciborgues se move como um VTOL normal: selecione-o e clique num
+pedaço de terreno para movê-lo. Ele vai decolar e pousar no local que você
+selecionou.
+
+Descarregando
+^^^^^^^^^^^^^
+
+A interface usada pelo Transporte de Ciborgues é uma versão simplificada da
+interface de Transporte. Para abri-la, clique com o botão direito no transporte.
+Os ciborgues carregados serão exibidos à esquerda. Para expulsar um ciborgue,
+clique nele (enquanto pousado, a gente não quer que eles caiam, né? :) ).
+
+Destruição
+^^^^^^^^^^
+
+Os Transportes de Ciborgues não têm armas, então são presas fáceis para torretas
+AA e hardpoints. Se um Transporte de Ciborgues for destruído e tiver alguns
+ciborgues a bordo, você vai perdê-los também. Então tome cuidado, tá?
+
+Atalhos de Teclado
+------------------
+
+Estes são os atalhos de teclado padrão. Se você personalizou o seu mapeamento de
+teclas, seus atalhos podem ser diferentes.
+
+Jogo
+~~~~
+|====
+|Esc |Pausar/Menu
+|F1 |Fabricação
+|F2 |Pesquisa
+|F3 |Construção
+|F4 |Projeto
+|F5 |Inteligência
+|F6 |Comandantes
+|`  |Abrir/fechar mensagens no topo
+|====
+
+Comunicação no multijogador
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+|====
+|Enter |Enviar mensagem
+|Alt+H |Soltar sinalizador
+|Z     |Alternar exibição de sensores
+|====
+
+.Seleção de unidades por grupos
+|====
+|Ctrl+['número'] |Atribuir grupo ['número']
+|['número']      |Selecionar grupo ['número']
+|Alt+['número']  |Selecionar comandante ['número']
+|====
+
+Seleção de unidades por tipo
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+|====
+|Ctrl+U       |Selecionar todas as unidades
+|Ctrl+Z       |Selecionar todas as unidades com os mesmos componentes
+|duplo clique |Selecionar todas as unidades com os mesmos componentes
+|Ctrl+S       |Selecionar todas as unidades na tela
+|Ctrl+D       |Selecionar todas as unidades muito danificadas
+|Ctrl+A       |Selecionar todas as unidades de ataque (unidades com armas)
+|Ctrl+V       |Selecionar todos os VTOLs
+|Ctrl+H       |Selecionar todas as unidades hover
+|Ctrl+W       |Selecionar todas as unidades com rodas
+|Ctrl+F       |Selecionar todas as unidades semilagarta
+|Ctrl+T       |Selecionar todas as unidades com esteiras
+|====
+
+Ordens de unidade
+~~~~~~~~~~~~~~~~~
+|====
+|Ctrl+clique |Enfileirar ordem *
+|NUM0        |Abrir menu de ordens
+|clique direito |Abrir menu de ordens
+|/           |Vencer ou Morrer! (Não recuar automaticamente)
+|.           |Recuar com Dano Pesado
+|,           |Recuar com Dano Médio
+|F           |Atirar à Vontade
+|E           |Revidar Fogo
+|C           |Segurar Fogo
+|S           |Manter Posição
+|P           |Perseguir
+|Q           |Patrulhar
+|I           |Alcance Ótimo
+|U           |Longo Alcance
+|R           |Retornar para Reparo
+|Ctrl+R      |Retornar para Reciclagem
+|====
+
++++*+++ "Enfileirar ordem" significa que, quando você dá Ctrl+clique, a unidade
+faz o que faria se você tivesse clicado, mas depois de terminar o que está
+fazendo no momento. Você pode segurar Ctrl e mandar a unidade fazer um monte de
+coisas, e ela vai fazê-las em ordem.
+
+Controle do jogo
+~~~~~~~~~~~~~~~~
+|====
+|Ctrl+- |Diminuir a velocidade do jogo *
+|Ctrl+= |Aumentar a velocidade do jogo *
+|NUM.   |Alternar o som
+|====
+
++++*+++ Note que mudar a velocidade do jogo pode causar problemas.
+
+Visão
+~~~~~
+|====
+|B   |Centralizar a visão no Centro de Comando
+|F12 |Ver a localização da mensagem anterior
+|====
+
+Controle de câmera
+~~~~~~~~~~~~~~~~~~
+|====
+|Backspace |Alinhar (girar) a visão para o Norte
+|NUM8      |Inclinar para trás (girar para cima)
+|NUM2      |Inclinar para frente (girar para baixo)
+|NUM5      |Redefinir inclinação (redefinir rotação vertical)
+|NUM4      |Girar para a esquerda
+|NUM6      |Girar para a direita
+|space     |Câmera de seguimento (seguir a unidade selecionada)
+|====
+
+Interface
+~~~~~~~~~
+|====
+|F10       |Tirar captura de tela
+|Shift+Tab |Alternar as cores do radar
+|Ctrl+Tab  |Alternar o terreno do radar
+|Tab       |Alternar a interface
+|====
+
+Créditos
+--------
+
+Retirado do arquivo AUTHORS.TXT:
+....
+Jogo original desenvolvido pela Pumpkin Studios e publicado pela EIDOS Interactive.
+
+A equipe do Projeto Warzone 2100, em ordem alfabética:
+
+Thomas Barlow <Mysteryem> : Gráficos 3D
+-- <Buginator> : Programação
+Bruce V. Edwards <cathuria> : Gráficos 2D/3D
+Elio Gubser <elio, ohyeh> : Gráficos 2D
+Steven Koenig <kreuvf> : Documentação, tradução
+Gerard Krol <gerard_> : Programação, Texturas
+Guangcong Luo <Zarel> : Programação, Balanceamento e Documentação
+Per I. Mathisen <per> : Programação
+Kim Metcalfe <lav-coyote25> : Documentação, Mapas e Suporte
+Christian Ohm <cybersphinx> : Programação
+Tim P. <kamaze> : Webmaster
+Giel van Schijndel <Giel> : Programação e empacotamento para Debian Linux e Windows
+Dennis Schridde <devurandom> : Programação e empacotamento geral para Linux e Windows
+Freddie Witherden <EvilGuru> : Programação e empacotamento para MacOSX
+
+Antigos colaboradores da versão GPL, em ordem alfabética:
+
+Scott Balneaves <sbalneav> : Programação
+Roman C. <troman> : Programação e Scripting + reescrita do motor de scripting e IA
+Denis Dupeyron <charun> : Programação
+Don Edwards : Suporte a Gráficos 2D
+Mike Gilmore <Chojun> : Programação
+-- <Hatsjoe> : Gráficos 2D
+Carl Hee <Watermelon> : Programação + Multitorretas
+Adam Holland
+Stefan Huehner <shuehner> : Programação + suporte original a 64 bits
+Ari Johnson <iamtheari> : Programação e empacotamento para MacOSX + port original para MacOSX
+Martin Koller <mkoller> : Programação
+Angus Lees <gus> : Empacotamento para Debian
+Dennis Luxen <pret> : Programação
+Kevin Malec <Kevin`> : Suporte web
+Dion Mendel <noid> : Programação, port original para Linux
+Phil Procario <GrimMoroe, grimandmandy> : Gráficos 3D
+-- <Pseudonym404> : Programação + suporte original a 64 bits
+Victor Qamly <vqamly> : Programação
+Marcus Rast <charon> : Programação
+Ben Russon <grizzly> : Suporte
+Hylke van der Schaaf <TheNoid> : Programação
+Dmitri Shuralyov <shurcool> : Programação
+Rodolphe Suescun <rodzilla> : Programação
+-- <vs2k5> : Programação
+
+Não membros do projeto cujo conteúdo foi usado no Warzone, em ordem alfabética:
+
+Tristan Bethe : Texturas de terreno
+Jennifer Boyer : Texturas de terreno
+Bart Everson : Texturas de terreno
+Mitch Featherston : Texturas de terreno
+Peter Kaminski : Texturas de terreno
+Konstantin Kleine-Niermann : Texturas de terreno
+Sherrie Thai : Texturas de terreno
+Mark A. Vargas : Texturas de terreno
+
+Autores do Guia de Início Rápido do Warzone 2100:
+
+Ben Latimore <BlueMaxima>: Escreveu a maior parte do conteúdo deste guia
+Guangcong Luo <Zarel>: Reescreveu algumas seções
+
+Este guia é publicado sob a licença CC0.
+....
