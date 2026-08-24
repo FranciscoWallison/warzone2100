@@ -1,0 +1,180 @@
+# Mantem os branches de TRABALHO do fork (hq-textures, pt-br) rebaseados em cima do
+# codigo atual do oficial (Warzone2100/warzone2100), automaticamente.
+#
+# Divisao de tarefas:
+#   upstream-sync.yml  -> cuida do master (espelho puro do oficial)
+#   branch-rebase.yml  -> cuida dos branches com trabalho proprio (este arquivo)
+#
+# Por que existe: em 03/07/2026 o sync parou e ninguem percebeu; em 24/08 o fork estava
+# 298 commits atras e os branches de trabalho apoiados num upstream de 28/06. Este job
+# detecta no MESMO DIA se o patch parou de aplicar limpo.
+#
+# Onde colocar: .github/workflows/branch-rebase.yml no DEFAULT BRANCH do fork (hoje,
+# hq-textures). O GitHub registra o cron a partir do default branch; num branch qualquer
+# ele nao roda. Veja o README.md desta pasta, secao 0.
+#
+# Aviso: force-push. Se voce tiver trabalho local nao commitado nesses branches, de
+# `git fetch` + `git rebase` antes de continuar de onde parou.
+
+name: Branch Rebase
+
+on:
+  schedule:
+    - cron: '0 7 * * *'      # todo dia as 07:00 UTC (1h depois do upstream-sync)
+  workflow_dispatch:
+    inputs:
+      branches:
+        description: 'Branches a rebasear (separados por espaco)'
+        required: false
+        default: 'hq-textures pt-br'
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: branch-rebase
+  cancel-in-progress: false
+
+jobs:
+  rebase:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false          # se o hq-textures conflitar, o pt-br ainda e tentado
+      matrix:
+        branch: [hq-textures, pt-br]
+    steps:
+      - name: Pular branch nao pedido (quando rodado na mao)
+        id: gate
+        run: |
+          set -euo pipefail
+          WANTED="${{ github.event.inputs.branches }}"
+          if [ -z "$WANTED" ]; then WANTED="hq-textures pt-br"; fi
+          if echo " $WANTED " | grep -q " ${{ matrix.branch }} "; then
+            echo "run=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "run=false" >> "$GITHUB_OUTPUT"
+            echo "Branch ${{ matrix.branch }} nao esta em '$WANTED' - pulando."
+          fi
+
+      - name: Checkout ${{ matrix.branch }}
+        if: steps.gate.outputs.run == 'true'
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ matrix.branch }}
+          fetch-depth: 0
+
+      - name: Rebase em cima do upstream
+        if: steps.gate.outputs.run == 'true'
+        id: rebase
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          BRANCH="${{ matrix.branch }}"
+          git config user.name  "Francisco Wallison"
+          git config user.email "franciscowallison@gmail.com"
+          git remote add upstream https://github.com/Warzone2100/warzone2100.git
+          git fetch --no-tags upstream master
+
+          UP=$(git rev-parse upstream/master)
+          BASE=$(git merge-base "$UP" HEAD)
+          OWN=$(git rev-list --count "$BASE"..HEAD)
+          BEHIND=$(git rev-list --count HEAD.."$UP")
+          echo "branch=$BRANCH base=${BASE:0:9} upstream=${UP:0:9} proprios=$OWN atras=$BEHIND"
+
+          if [ "$BASE" = "$UP" ]; then
+            echo "Ja esta em cima do upstream atual - nada a fazer."
+            {
+              echo "### \`$BRANCH\`"
+              echo "Ja estava em dia com o upstream (\`${UP:0:9}\`). Nada a fazer."
+            } >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+
+          if [ "$OWN" -eq 0 ]; then
+            echo "Sem commits proprios - este branch nao deveria estar aqui (o master e cuidado pelo upstream-sync)."
+            exit 0
+          fi
+
+          # guarda o patch de antes, para conferir que o rebase nao mudou o conteudo
+          git diff "$BASE" HEAD > /tmp/before.patch
+
+          if git rebase "$UP" > /tmp/rebase.log 2>&1; then
+            cat /tmp/rebase.log
+            git diff "$UP" HEAD > /tmp/after.patch
+            # os numeros de linha mudam quando o upstream mexe nos arquivos ao redor;
+            # comparamos so as linhas adicionadas/removidas de verdade.
+            norm() { grep -E '^[+-]' "$1" | grep -vE '^(\+\+\+|---)' || true; }
+            if [ "$(norm /tmp/before.patch)" = "$(norm /tmp/after.patch)" ]; then
+              SAME="sim"
+            else
+              SAME="NAO - confira o diff"
+            fi
+            git push --force-with-lease origin "HEAD:$BRANCH"
+            NEW=$(git rev-parse --short HEAD)
+            {
+              echo "### \`$BRANCH\` rebaseado"
+              echo ""
+              echo "| | |"
+              echo "|---|---|"
+              echo "| upstream | \`${UP:0:9}\` |"
+              echo "| base antiga | \`${BASE:0:9}\` (estava $BEHIND commits atras) |"
+              echo "| novo tip | \`$NEW\` |"
+              echo "| commits proprios | $OWN |"
+              echo "| patch identico ao de antes | $SAME |"
+            } >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+
+          # ---------------- conflito ----------------
+          # a saida do rebase que falhou ja esta no log; abortar deixa o branch intacto
+          CONFLITO=$(head -40 /tmp/rebase.log || true)
+          git rebase --abort || true
+
+          {
+            echo "### :warning: \`$BRANCH\` NAO rebaseia limpo"
+            echo ""
+            echo "O upstream andou $BEHIND commits e o patch deste branch ($OWN commit(s) proprios) parou de aplicar."
+            echo "Nada foi empurrado: o branch continua como estava."
+            echo ""
+            echo "Para resolver na mao:"
+            echo '```bash'
+            echo "git fetch --all"
+            echo "git switch $BRANCH"
+            echo "git rebase upstream/master     # resolva os conflitos"
+            echo "git push --force-with-lease origin $BRANCH"
+            echo '```'
+            echo ""
+            echo "<details><summary>Saida do rebase</summary>"
+            echo ""
+            echo '```'
+            echo "$CONFLITO"
+            echo '```'
+            echo "</details>"
+          } >> "$GITHUB_STEP_SUMMARY"
+
+          # Tenta abrir uma issue. Em fork, Issues vem DESABILITADO: se estiver off,
+          # isto falha de proposito em silencio e o aviso fica sendo a falha do job
+          # (o GitHub manda email do run que falhou).
+          HAS_ISSUES=$(gh api "repos/${{ github.repository }}" --jq '.has_issues' 2>/dev/null || echo false)
+          if [ "$HAS_ISSUES" = "true" ]; then
+            TITULO="Rebase automatico falhou: $BRANCH nao aplica no upstream atual"
+            EXISTE=$(gh issue list --state open --search "$TITULO in:title" --json number --jq '.[0].number' 2>/dev/null || true)
+            RUN_URL="${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+            CORPO=$(printf '%s\n' \
+              "O branch \`$BRANCH\` parou de rebasear limpo em cima de \`upstream/master\` (\`${UP:0:9}\`)." \
+              "" \
+              "Estava $BEHIND commits atras, com $OWN commit(s) proprios. Nada foi empurrado." \
+              "" \
+              "Detalhes e o passo a passo: [run #${{ github.run_number }}]($RUN_URL)")
+            if [ -n "$EXISTE" ]; then
+              gh issue comment "$EXISTE" --body "$CORPO" || true
+            else
+              gh issue create --title "$TITULO" --body "$CORPO" || true
+            fi
+          else
+            echo "Issues desabilitadas neste fork - o aviso vai ser a falha deste job."
+          fi
+
+          exit 1
